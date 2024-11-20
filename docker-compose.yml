@@ -17,6 +17,8 @@ services:
     build: .  # Build from the Dockerfile (assumed to be a PHP-FPM setup)
     depends_on:
       - db  # Wait for the database to be ready
+    ports:
+      - "8080:8080"
     volumes:
       - ./:/var/www  # Mount the Laravel application directory
     networks:
