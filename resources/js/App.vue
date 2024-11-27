@@ -133,7 +133,7 @@ export default {
     display: flex;
     padding: 10px;
     border-top: 1px solid #ddd;
-    background: #fafafa;
+    background: #fafafa;    
 }
 
 .message-input {
