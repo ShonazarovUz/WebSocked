@@ -37,10 +37,18 @@ class HomeController extends Controller
 
     public function message(Request $request): JsonResponse
     {
+        dd($request->all());
+        // if there roomId is not null else
+        // 1. create room
+
+        // 2. store
         $message = Message::create([
             'user_id' => auth()->id(),
             'text' => $request->get('text'),
+            'room_id' => $request->get('chatId'),
         ]);
+
+        // 2. Queue - Q - Kyu
         SendMessage::dispatch($message);
 
         return response()->json([
